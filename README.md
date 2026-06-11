@@ -92,6 +92,65 @@ Escalabilidade automática.
 Cobrança apenas pelo uso.
 Integração nativa com outros serviços AWS.
 
+Implementando sua Primeira Stack com AWS CloudFormation
+Objetivo
+
+Aprender a utilizar o AWS CloudFormation para automatizar a criação e o gerenciamento de recursos na AWS por meio de arquivos de configuração chamados templates.
+
+O que é AWS CloudFormation?
+
+O AWS CloudFormation é um serviço de Infraestrutura como Código (IaC) que permite definir recursos da AWS em arquivos YAML ou JSON. Com ele, é possível criar, atualizar e excluir ambientes inteiros de forma automatizada e padronizada.
+
+Benefícios
+Automação da infraestrutura.
+Padronização de ambientes.
+Redução de erros manuais.
+Controle de versão dos recursos.
+Facilidade para replicar ambientes.
+Etapas Realizadas
+1. Criação do Template
+
+Foi criado um template em formato YAML contendo a definição dos recursos necessários.
+
+Exemplo:
+
+Resources:
+  MeuBucket:
+    Type: AWS::S3::Bucket
+2. Criação da Stack
+
+O template foi enviado ao CloudFormation para criação da Stack, que representa um conjunto de recursos gerenciados como uma única unidade.
+
+3. Validação
+
+Após a execução, foi possível acompanhar o progresso da criação dos recursos pelo console da AWS.
+
+4. Atualização da Stack
+
+Foram realizadas alterações no template para compreender o processo de atualização automática dos recursos.
+
+5. Exclusão da Stack
+
+Ao final do laboratório, a Stack foi removida para evitar cobranças desnecessárias.
+
+Conceitos Aprendidos
+Infrastructure as Code (IaC)
+Templates YAML e JSON
+Stacks
+Recursos AWS
+Automação de infraestrutura
+Gerenciamento do ciclo de vida dos recursos
+Conclusão
+
+O AWS CloudFormation simplifica a criação e o gerenciamento de infraestrutura na nuvem, permitindo implementar ambientes completos de forma consistente, repetível e segura através de código.
+
+Serviços Utilizados
+AWS CloudFormation
+Amazon S3
+AWS IAM (dependendo do laboratório)
+Resumo em uma frase
+
+O AWS CloudFormation permite criar e gerenciar infraestrutura na AWS através de código, automatizando a implantação de recursos e garantindo consistência entre ambientes.
 O AWS Lambda é um serviço serverless que executa código sob demanda em resposta a eventos. Ele elimina a necessidade de gerenciar servidores, oferece escalabilidade automática e integra-se facilmente com serviços como Amazon S3, AWS Step Functions e Amazon CloudWatch para criar aplicações e automações na nuvem
 
 Serviço responsável pelo controle de acesso e segurança na AWS. Permite criar usuários, grupos e funções, além de definir permissões específicas para cada recurso, seguindo o princípio do menor privilégio para aumentar a proteção do ambiente.
