@@ -151,6 +151,81 @@ AWS IAM (dependendo do laboratório)
 Resumo em uma frase
 
 O AWS CloudFormation permite criar e gerenciar infraestrutura na AWS através de código, automatizando a implantação de recursos e garantindo consistência entre ambientes.
-O AWS Lambda é um serviço serverless que executa código sob demanda em resposta a eventos. Ele elimina a necessidade de gerenciar servidores, oferece escalabilidade automática e integra-se facilmente com serviços como Amazon S3, AWS Step Functions e Amazon CloudWatch para criar aplicações e automações na nuvem
+O AWS Lambda é um serviço serverless que executa código sob demanda em resposta a eventos. Ele elimina a necessidade de gerenciar servidores, oferece escalabilidade automática e integra-se facilmente com serviços como Amazon S3, AWS Step Functions e Amazon CloudWatch para criar aplicações e automações na nuvem.
+AWS CLI
+
+A AWS Command Line Interface é uma ferramenta de linha de comando que permite gerenciar serviços da AWS diretamente pelo terminal. Com ela, é possível criar, configurar e monitorar recursos sem acessar o console web.
+
+Exemplos de uso:
+
+Criar buckets S3.
+Gerenciar instâncias EC2.
+Configurar usuários IAM.
+Automatizar tarefas administrativas.
+AWS SDKs
+
+Os SDKs da AWS são bibliotecas disponíveis para diversas linguagens de programação, como Python, Java, JavaScript e C#. Eles permitem que aplicações se comuniquem diretamente com os serviços da AWS por meio de código.
+
+Exemplos de uso:
+
+Upload de arquivos para o S3.
+Envio de mensagens para filas.
+Integração com serviços de IA.
+Gerenciamento automático de infraestrutura.
+Benefícios
+Automação de processos.
+Maior produtividade.
+Integração com aplicações.
+Redução de tarefas manuais.
+Escalabilidade e padronização.
+Conclusão
+
+A AWS CLI e os SDKs são ferramentas fundamentais para automatizar operações e desenvolver aplicações integradas à AWS. Enquanto a CLI é ideal para administração e scripts, os SDKs permitem incorporar recursos da nuvem diretamente ao código das aplicações.
+
+Resumo em uma frase
+
+A AWS CLI permite gerenciar serviços da AWS via terminal, enquanto os SDKs possibilitam integrar e controlar esses serviços por meio de código em diferentes linguagens de programação.
+Implementando Infraestrutura Automatizada com AWS CloudFormation
+Objetivo
+
+Aprender a automatizar a criação e o gerenciamento de recursos na AWS utilizando o AWS CloudFormation, aplicando o conceito de Infraestrutura como Código (IaC).
+
+O que é AWS CloudFormation?
+
+O AWS CloudFormation é um serviço que permite definir recursos da AWS por meio de arquivos de configuração (templates) em YAML ou JSON. Esses templates descrevem toda a infraestrutura necessária, possibilitando sua criação, atualização e remoção de forma automatizada.
+
+Principais Benefícios
+Automação da infraestrutura.
+Padronização de ambientes.
+Redução de erros manuais.
+Facilidade de replicação.
+Controle de versão da infraestrutura.
+Gerenciamento centralizado dos recursos.
+Etapas Realizadas
+Criação de um template CloudFormation.
+Definição dos recursos AWS necessários.
+Criação da Stack através do template.
+Monitoramento da implantação.
+Atualização dos recursos por meio do template.
+Exclusão da Stack ao término do laboratório.
+Conceitos Aprendidos
+Infrastructure as Code (IaC).
+Templates YAML e JSON.
+Stacks e recursos.
+Automação de provisionamento.
+Gerenciamento do ciclo de vida da infraestrutura.
+Reprodutibilidade de ambientes.
+Serviços Relacionados
+AWS CloudFormation
+Amazon EC2
+Amazon S3
+AWS IAM
+Conclusão
+
+O AWS CloudFormation permite criar e gerenciar infraestruturas completas por meio de código, tornando o provisionamento mais rápido, seguro, escalável e consistente entre diferentes ambientes.
+
+Resumo em uma frase
+
+O AWS CloudFormation automatiza a criação e o gerenciamento da infraestrutura na AWS através de templates, garantindo consistência, escalabilidade e redução de erros operacionais.
 
 Serviço responsável pelo controle de acesso e segurança na AWS. Permite criar usuários, grupos e funções, além de definir permissões específicas para cada recurso, seguindo o princípio do menor privilégio para aumentar a proteção do ambiente.
