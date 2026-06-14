@@ -229,3 +229,66 @@ Resumo em uma frase
 O AWS CloudFormation automatiza a criação e o gerenciamento da infraestrutura na AWS através de templates, garantindo consistência, escalabilidade e redução de erros operacionais.
 
 Serviço responsável pelo controle de acesso e segurança na AWS. Permite criar usuários, grupos e funções, além de definir permissões específicas para cada recurso, seguindo o princípio do menor privilégio para aumentar a proteção do ambiente.
+Arquitetura Utilizada
+
+Fluxo básico da solução:
+
+O AWS Step Functions inicia a execução do workflow.
+O workflow chama uma função AWS Lambda.
+A função processa os dados recebidos.
+O resultado é retornado ao Step Functions.
+O fluxo segue para o próximo estado ou é finalizado.
+Criação da Função Lambda
+
+Foi criada uma função Lambda utilizando o runtime Node.js.
+
+Exemplo de código:
+
+exports.handler = async (event) => {
+    return {
+        statusCode: 200,
+        message: "Execução realizada com sucesso!"
+    };
+};
+Criação da State Machine
+
+Foi criada uma State Machine utilizando o tipo Standard.
+
+Exemplo de definição:
+
+{
+  "Comment": "Exemplo de execução Lambda",
+  "StartAt": "ExecutarLambda",
+  "States": {
+    "ExecutarLambda": {
+      "Type": "Task",
+      "Resource": "arn:aws:states:::lambda:invoke",
+      "End": true
+    }
+  }
+}
+Testes Realizados
+Entrada
+{
+  "nome": "Teste"
+}
+Saída
+{
+  "statusCode": 200,
+  "message": "Execução realizada com sucesso!"
+}
+Aprendizados
+Resumo
+
+Como criar funções AWS Lambda.
+Como configurar permissões IAM para integração.
+Como criar State Machines no AWS Step Functions.
+Como executar workflows serverless.
+Como monitorar execuções utilizando o histórico do Step Functions.
+Como visualizar logs através do Amazon CloudWatch.
+Benefícios da Integração
+Eliminação do gerenciamento de servidores.
+Escalabilidade automática.
+Menor complexidade operacional.
+Integração nativa entre serviços AWS.
+Facilidade de monitoramento e rastreamento das execuções.
