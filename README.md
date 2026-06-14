@@ -270,12 +270,12 @@ Exemplo de definição:
 Testes Realizados
 Entrada
 {
-  "nome": "Teste"
+  "nome": "Tentativa"
 }
 Saída
 {
   "statusCode": 200,
-  "message": "Execução realizada com sucesso!"
+  "message": "Execução executada com sucesso!"
 }
 Aprendizados
 Resumo
@@ -292,3 +292,100 @@ Escalabilidade automática.
 Menor complexidade operacional.
 Integração nativa entre serviços AWS.
 Facilidade de monitoramento e rastreamento das execuções.
+
+====================================================================================================================================================================================================================================================================================
+
+Conceitos Aprendidos
+AWS Lambda
+
+O AWS Lambda é um serviço de computação serverless que executa código sem necessidade de gerenciar servidores. O usuário paga apenas pelo tempo de execução da função.
+
+Principais vantagens:
+
+Escalabilidade automática.
+Modelo pay-per-use.
+Integração nativa com diversos serviços AWS.
+Redução de custos operacionais.
+Amazon S3
+
+O Amazon S3 (Simple Storage Service) é um serviço de armazenamento de objetos altamente escalável.
+
+Características:
+
+Armazenamento ilimitado.
+Alta disponibilidade.
+Versionamento de arquivos.
+Controle de acesso via IAM.
+Integração Lambda + S3
+
+Quando um arquivo é enviado, removido ou alterado em um bucket S3, um evento pode ser disparado automaticamente para uma função Lambda.
+
+Fluxo:
+
+Usuário envia arquivo para o bucket.
+O S3 gera um evento.
+O evento aciona a função Lambda.
+A função executa a lógica programada.
+Resultado é registrado nos logs do CloudWatch.
+Passo a Passo da Implementação
+1. Criar Bucket S3
+Acessar o console AWS.
+Abrir o serviço Amazon S3.
+Criar um bucket com nome único.
+Manter configurações padrão para o laboratório.
+2. Criar Função Lambda
+Acessar AWS Lambda.
+Selecionar "Create Function".
+Escolher "Author from Scratch".
+Definir:
+Nome da função.
+Runtime Python 3.x.
+Role com permissões básicas.
+3. Código da Função
+
+Exemplo simples:
+
+import json
+
+def lambda_handler(event, context):
+    
+    print("Evento recebido:")
+    print(json.dumps(event))
+    
+    return {
+        'statusCode': 200,
+        'body': 'Arquivo processado com sucesso'
+    }
+4. Configurar Trigger S3
+
+Na função Lambda:
+
+Add Trigger.
+Escolher Amazon S3.
+Selecionar o bucket criado.
+Evento:
+PUT (upload de objetos).
+5. Testar a Automação
+Fazer upload de um arquivo no bucket.
+Verificar execução da Lambda.
+Consultar logs no CloudWatch.
+Arquitetura da Solução
+Usuário
+   │
+   ▼
+Amazon S3
+   │ Evento Upload
+   ▼
+AWS Lambda
+   │
+   ▼
+CloudWatch Logs
+Benefícios da Solução
+Processamento automático de arquivos.
+Arquitetura serverless.
+Baixo custo operacional.
+Escalabilidade automática.
+Fácil integração com outros serviços AWS.
+Conclusão
+
+A integração entre AWS Lambda e Amazon S3 permite criar soluções orientadas a eventos de forma simples e escalável. Essa abordagem é amplamente utilizada para processamento de imagens, análise de documentos, ETL, notificações e automações corporativas, eliminando a necessidade de servidores dedicados e reduzindo custos de infraestrutura.
